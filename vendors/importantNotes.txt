@@ -1,0 +1,9 @@
+extentions   :
+
+1.colorize in vs code to highlight the color in hast code
+2.css auto prefix to auto prfix the css props for different browser compatability
+3. liveserver 
+4.savetyping
+
+clippy -- clip-path:for different shapes -- https://bennettfeely.com/clippy/
+
