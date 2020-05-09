@@ -35,7 +35,7 @@ body {
 
 .header {
     height: 95vh;
-    background-image:linear-gradient(#55c57ad0,#28b485c9), url(../img/hero.jpg);
+    background-image:linear-gradient(#55c57aab,#28b485af), url(../img/hero.jpg);
     background-size: cover;
     background-position: top;
     /*-- refer link in importent notes ---*/
@@ -71,6 +71,9 @@ body {
     -moz-transform: translate(-50%,-50%);
     -ms-transform: translate(-50%,-50%);
     -o-transform: translate(-50%,-50%);
+
+    /* to make every text type element in the div to center ... here making the button of type anchor having text to center */
+    text-align: center;
 }
 
 .heading-primary {
@@ -80,6 +83,7 @@ body {
     /* during transforms or animations the backpart shakes some times to ovecome that */
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
+    margin-bottom: 60px;
 }
 
 .heading-primary-main {
@@ -90,11 +94,9 @@ body {
 
     animation-name: moveInLeft;
     animation-duration: 1s;
-    animation-delay: 2s;
+    animation-delay: 1s;
     /* count for no of times it suls=d happen */
     /* animation-iteration-count: 1; */
-
-
 }
 
 .heading-primary-sub {
@@ -105,7 +107,7 @@ body {
 
     animation-name: moveInRight;
     animation-duration: 1s;
-    animation-delay: 2s;
+    animation-delay: 1s;
     /* count for no of times it suls=d happen */
     /* animation-iteration-count: 1; */
 }
@@ -137,8 +139,9 @@ body {
         -o-transfor:trodanslate(0);
         -moz-transform: tanslate(0);
         -o-transform: tanslate(0);
+    }
 }
-}
+/*---------------------- key frames -------------------------*/ 
 
 @keyframes moveInRight {
     0% {
@@ -174,4 +177,122 @@ body {
         -ms-transform: translate(0);
         -o-transform: translate(0);
     }
+}
+
+
+@keyframes moveInButton {
+    0% {
+        opacity: 0;
+        transform: translatey(30px);
+        -webkit-transform: translatey(30px);
+        -moz-transform: translatey(30px);
+        -ms-transform: translatey(30px);
+        -o-transform: translatey(30px);
+}
+
+    100% {
+        opacity: 1;
+        transform: toanslate(0);
+        -webkit-transform: toanslate(0);
+        -moz-transfrom: traslate(0);
+        -ms-transform: translate(0);
+        -o-transfor:trodanslate(0);
+        -moz-transform: tanslate(0);
+        -o-transform: tanslate(0);
+    }
+}
+
+/*---------------------- buttons -------------------------*/ 
+
+
+.btn:link,
+.btn:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: 700;
+    padding: 15px 40px;
+    display: inline-block;
+
+    transition: all .2s;
+    -webkit-transition: all .2s;
+    -moz-transition: all .2s;
+    -ms-transition: all .2s;
+    -o-transition: all .2s;
+    
+    border-radius: 50px;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    -ms-border-radius: 50px;
+    -o-border-radius: 50px;
+
+    position: relative;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    -webkit-transform: translateY(-3px);
+    -moz-transform: translateY(-3px);
+    -ms-transform: translateY(-3px);
+    -o-transform: translateY(-3px);
+
+    box-shadow: 0 10px 20px rgb(0,0,0,.2);
+}
+
+.btn:active {
+    transform: translateY(-1px);
+    -webkit-transform: translateY(-1px);
+    -moz-transform: translateY(-1px);
+    -ms-transform: translateY(-1px);
+    -o-transform: translateY(-1px);
+
+    box-shadow: 0 5px 10px rgb(0,0,0,.2);
+
+}
+
+.btn-white {
+    background-color: #fff;
+    color: #777;
+}
+
+  /* style using psudo elements . sudo elements allow us to different parts of elements */
+
+  .btn::after {
+      content:  "";
+      display: inline-block;
+      height: 100%;
+      width: 100%;
+      border-radius: 100px;
+      -webkit-border-radius: 100px;
+      -moz-border-radius: 100px;
+      -ms-border-radius: 100px;
+      -o-border-radius: 100px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      transition: all .4s;
+      -webkit-transition: all .4s;
+      -moz-transition: all .4s;
+      -ms-transition: all .4s;
+      -o-transition: all .4s;
+}
+
+.btn-white::after {
+    background-color: #fff;
+}
+
+.btn:hover::after {
+    transform: scalex(1.4) scaleY(1.6);
+    -webkit-transform: scalex(1.4) scaleY(1.6);
+    -moz-transform: scalex(1.4) scaleY(1.6);
+    -ms-transform: scalex(1.4) scaleY(1.6);
+    -o-transform: scalex(1.4) scaleY(1.6);
+    opacity: 0;
+}
+
+.btn-animated {
+    animation: moveInButton .5s ease-out .7s;
+    -webkit-animation: moveInButton .5s ease-out 2s;
+
+    animation-fill-mode: backwards;
 }
