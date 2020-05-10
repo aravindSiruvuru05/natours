@@ -13,6 +13,10 @@ Dark green: #28b485
     /* ----- to set all the elements a common constraints ---*/
     margin: 0;
     padding: 0;
+    box-sizing: inherit;
+}
+
+html {
     box-sizing: border-box;
 }
 
@@ -35,7 +39,7 @@ body {
 
 .header {
     height: 95vh;
-    background-image:linear-gradient(#55c57aab,#28b485af), url(../img/hero.jpg);
+    background-image:linear-gradient(#55c57abe,#28b485c2), url(../img/hero.jpg);
     background-size: cover;
     background-position: top;
     /*-- refer link in importent notes ---*/
@@ -44,14 +48,14 @@ body {
     position: relative;
 }
 
-.logo-box {
+.header__logo-box {
     position: absolute;
     /*these top left props are calculated from the parent element header */
     top: 40px;
     left: 40px;
 }
 
-.logo {
+.header__logo {
     height: 35px;
 }
 
@@ -60,7 +64,7 @@ body {
     -webkit-animation: moveInRight 1s  ;
 } */
 
-.text-box {
+.header__text-box {
     position: absolute;
     /* this selector element is set absolute and parent is set to relative 
      so these valuse are in relatinon with the parent */
@@ -86,7 +90,7 @@ body {
     margin-bottom: 60px;
 }
 
-.heading-primary-main {
+.heading-primary--main {
     display: block;
     font-size: 60px;
     font-weight: 400;
@@ -99,7 +103,7 @@ body {
     /* animation-iteration-count: 1; */
 }
 
-.heading-primary-sub {
+.heading-primary--sub {
     display: block;
     font-size: 20px;
     font-weight: 400;
@@ -249,7 +253,7 @@ body {
 
 }
 
-.btn-white {
+.btn--white {
     background-color: #fff;
     color: #777;
 }
@@ -277,7 +281,7 @@ body {
       -o-transition: all .4s;
 }
 
-.btn-white::after {
+.btn--white::after {
     background-color: #fff;
 }
 
@@ -290,7 +294,7 @@ body {
     opacity: 0;
 }
 
-.btn-animated {
+.btn--animated {
     animation: moveInButton .5s ease-out .7s;
     -webkit-animation: moveInButton .5s ease-out 2s;
 

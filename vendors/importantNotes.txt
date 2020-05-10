@@ -7,3 +7,4 @@ extentions   :
 
 clippy -- clip-path:for different shapes -- https://bennettfeely.com/clippy/
 
+codepen sample -- https://codepen.io/jonasschmedtmann/pen/LXydvq
