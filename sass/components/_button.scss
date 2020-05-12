@@ -52,9 +52,8 @@
     }
 
     &--animated {
-      animation: moveInButton .5s ease-out .7s;
-      animation-fill-mode: backwards; 
+      animation: moveInButton .5s ease-out 2s;
+      animation-fill-mode: backwards;
     }
-    
 
   }

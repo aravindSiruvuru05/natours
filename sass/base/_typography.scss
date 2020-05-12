@@ -5,7 +5,6 @@
     text-transform: uppercase;
     /* during transforms or animations the backpart shakes some times to ovecome that */
     backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
     margin-bottom: 6rem; 
 
     &--main {
@@ -13,22 +12,17 @@
         font-size: 6rem;
         font-weight: 400;
         letter-spacing: 3.5rem;
-        animation-name: moveInLeft;
-        animation-duration: 1s;
-        animation-delay: 1s;
-        /* count for no of times it suls=d happen */
-        /* animation-iteration-count: 1; */ }
+        animation: moveInLeft 1s ease-out 2s;
+        /*countfornooftimesitsuls=dhappen*//*animation-iteration-count: 1; */
+}
       
     &--sub {
         display: block;
         font-size: 2rem;
         font-weight: 400;
         letter-spacing: 1.6rem;
-        animation-name: moveInRight;
-        animation-duration: 1s;
-        animation-delay: 1s;
-        /* count for no of times it suls=d happen */
-        /* animation-iteration-count: 1; */ }
+        animation: moveInRight 1s ease-out 2s;
+}
 
 }
 
