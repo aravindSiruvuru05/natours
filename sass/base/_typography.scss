@@ -1,0 +1,49 @@
+
+  
+  .heading-primary {
+    color: #fff;
+    text-transform: uppercase;
+    /* during transforms or animations the backpart shakes some times to ovecome that */
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    margin-bottom: 6rem; 
+
+    &--main {
+        display: block;
+        font-size: 6rem;
+        font-weight: 400;
+        letter-spacing: 3.5rem;
+        animation-name: moveInLeft;
+        animation-duration: 1s;
+        animation-delay: 1s;
+        /* count for no of times it suls=d happen */
+        /* animation-iteration-count: 1; */ }
+      
+    &--sub {
+        display: block;
+        font-size: 2rem;
+        font-weight: 400;
+        letter-spacing: 1.6rem;
+        animation-name: moveInRight;
+        animation-duration: 1s;
+        animation-delay: 1s;
+        /* count for no of times it suls=d happen */
+        /* animation-iteration-count: 1; */ }
+
+}
+
+body {
+    /* we specify base font attributes in body as the font attributes inherit from parent 
+        and body is on top of hirearchy and and all the child elements gets inherited with the properties declared 
+        in body selector */
+    font-family: "Lato" ,"Arial", sans-serif;
+    font-weight: 400;
+    font-size: 1.6rem;
+    /* line height 1.7 meaans .. 1.7 times of pre defined height. */
+    line-height: 1.7;
+    color: $color-grey-dark;
+    /*-- not for inheritance ---*/
+    padding: 3rem;
+    
+  }
+  

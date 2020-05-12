@@ -1,302 +1,161 @@
-/*
-COLORS:
-
-Light green: #7ed56f
-Medium green: #55c57a
-Dark green: #28b485
-
-*/
-
 /*------------------------ Basic setup ----------------------------------*/
- 
-* {
-    /* ----- to set all the elements a common constraints ---*/
-    margin: 0;
-    padding: 0;
-    box-sizing: inherit;
-}
+*,
+*::after,
+*::before {
+  /* ----- to set all the elements a common constraints ---*/
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
 
 html {
-    box-sizing: border-box;
-}
+  /* to make the whole typogrphy in relation, we use "rem" which is x times of root font size
+      we use 10px as root font size for easy manipulation of whole px calculation
+      if we want 70px element we give it as 7rem where its value is 70px i.e 7*10px(root font size)
+      lest now make it into percentage where regular default fontsize of browser is 
+      16px so , 16px as 100% then 10px is 62.5% */
+  font-size: 62.5%;
+  /* 10px */ }
 
 body {
-    /* we specify base font attributes in body as the font attributes inherit from parent 
-      and body is on top of hirearchy and and all the child elements gets inherited with the properties declared 
-      in body selector */
-    font-family: "Lato" ,"Arial", sans-serif;
-    font-weight: 400;
-    font-size: 16px;
-    /* line height 1.7 meaans .. 1.7 times of pre defined height. */
-    line-height: 1.7;
-    color: #777;
-    /*-- not for inheritance ---*/
-    padding: 30px;
-}
+  box-sizing: border-box; }
 
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px); }
+  80% {
+    transform: translate(20px); }
+  100% {
+    opacity: 1;
+    transform: toanslate(0); } }
 
-/*---------------------------------- HEADER -------------------------------------*/
+/*---------------------- key frames -------------------------*/
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(10rem); }
+  /* 60% {
+          transform: rotate(180deg);
+      } */
+  80% {
+    transform: translate(-2rem); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
 
-.header {
-    height: 95vh;
-    background-image:linear-gradient(#55c57abe,#28b485c2), url(../img/hero.jpg);
-    background-size: cover;
-    background-position: top;
-    /*-- refer link in importent notes ---*/
-    clip-path: polygon(0 0,100% 0,100% 75vh, 0 100%);
-    /* child logo box is set to absolute , so the header shuld be relative to set its position*/
-    position: relative;
-}
-
-.header__logo-box {
-    position: absolute;
-    /*these top left props are calculated from the parent element header */
-    top: 40px;
-    left: 40px;
-}
-
-.header__logo {
-    height: 35px;
-}
-
-/* .logo:hover {
-    animation: moveInRight 1s ;
-    -webkit-animation: moveInRight 1s  ;
-} */
-
-.header__text-box {
-    position: absolute;
-    /* this selector element is set absolute and parent is set to relative 
-     so these valuse are in relatinon with the parent */
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    -webkit-transform: translate(-50%,-50%);
-    -moz-transform: translate(-50%,-50%);
-    -ms-transform: translate(-50%,-50%);
-    -o-transform: translate(-50%,-50%);
-
-    /* to make every text type element in the div to center ... here making the button of type anchor having text to center */
-    text-align: center;
-}
+@keyframes moveInButton {
+  0% {
+    opacity: 0;
+    transform: translatey(3rem); }
+  100% {
+    opacity: 1;
+    transform: toanslate(0); } }
 
 .heading-primary {
-    color: #fff;
-    text-transform: uppercase;
-
-    /* during transforms or animations the backpart shakes some times to ovecome that */
-    backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
-    margin-bottom: 60px;
-}
-
-.heading-primary--main {
+  color: #fff;
+  text-transform: uppercase;
+  /* during transforms or animations the backpart shakes some times to ovecome that */
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  margin-bottom: 6rem; }
+  .heading-primary--main {
     display: block;
-    font-size: 60px;
+    font-size: 6rem;
     font-weight: 400;
-    letter-spacing: 35px;
-
+    letter-spacing: 3.5rem;
     animation-name: moveInLeft;
     animation-duration: 1s;
     animation-delay: 1s;
     /* count for no of times it suls=d happen */
-    /* animation-iteration-count: 1; */
-}
-
-.heading-primary--sub {
+    /* animation-iteration-count: 1; */ }
+  .heading-primary--sub {
     display: block;
-    font-size: 20px;
+    font-size: 2rem;
     font-weight: 400;
-    letter-spacing: 15px;
-
+    letter-spacing: 1.6rem;
     animation-name: moveInRight;
     animation-duration: 1s;
     animation-delay: 1s;
     /* count for no of times it suls=d happen */
-    /* animation-iteration-count: 1; */
-}
+    /* animation-iteration-count: 1; */ }
 
-@keyframes moveInLeft {
-    0% {
-        opacity: 0;
-        transform: translateX(-100px);
-        -webkit-transform: translateX(-100px);
-        -moz-transform: translateX(-100px);
-        -ms-transform: translateX(-100px);
-        -o-transform: translateX(-100px);
-    }
+body {
+  /* we specify base font attributes in body as the font attributes inherit from parent 
+        and body is on top of hirearchy and and all the child elements gets inherited with the properties declared 
+        in body selector */
+  font-family: "Lato" ,"Arial", sans-serif;
+  font-weight: 400;
+  font-size: 1.6rem;
+  /* line height 1.7 meaans .. 1.7 times of pre defined height. */
+  line-height: 1.7;
+  color: #777;
+  /*-- not for inheritance ---*/
+  padding: 3rem; }
 
-    80% {
-        transform: translate(20px);
-        -webkit-transform: translate(20px);
-        -moz-transform: translate(20px);
-        -ms-transform: translate(20px);
-        -o-transform: translate(20px);
-    }
-
-    100% {
-        opacity: 1;
-        transform: toanslate(0);
-        -webkit-transform: toanslate(0);
-        -moz-transfrom: traslate(0);
-        -ms-transform: translate(0);
-        -o-transfor:trodanslate(0);
-        -moz-transform: tanslate(0);
-        -o-transform: tanslate(0);
-    }
-}
-/*---------------------- key frames -------------------------*/ 
-
-@keyframes moveInRight {
-    0% {
-        opacity: 0;
-        transform: translateX(100px);
-        -webkit-transform: translateX(100px);
-        -moz-transform: translateX(100px);
-        -ms-transform: translateX(100px);
-        -o-transform: translateX(100px);
-    }
-
-    /* 60% {
-        transform: rotate(180deg);
-        -webkit-transform: rotate(180deg);
-        -moz-transform: rotate(180deg);
-        -ms-transform: rotate(180deg);
-        -o-transform: rotate(180deg);
-    } */
-
-    80% {
-        transform: translate(-20px);
-        -webkit-transform: translate(-20px);
-        -moz-transform: translate(-20px);
-        -ms-transform: translate(-20px);
-        -o-transform: translate(-20px);
-    }
-
-    100% {
-        opacity: 1;
-        transform: translate(0);
-        -webkit-transform: translate(0);
-        -moz-transform: translate(0);
-        -ms-transform: translate(0);
-        -o-transform: translate(0);
-    }
-}
-
-
-@keyframes moveInButton {
-    0% {
-        opacity: 0;
-        transform: translatey(30px);
-        -webkit-transform: translatey(30px);
-        -moz-transform: translatey(30px);
-        -ms-transform: translatey(30px);
-        -o-transform: translatey(30px);
-}
-
-    100% {
-        opacity: 1;
-        transform: toanslate(0);
-        -webkit-transform: toanslate(0);
-        -moz-transfrom: traslate(0);
-        -ms-transform: translate(0);
-        -o-transfor:trodanslate(0);
-        -moz-transform: tanslate(0);
-        -o-transform: tanslate(0);
-    }
-}
-
-/*---------------------- buttons -------------------------*/ 
-
-
-.btn:link,
-.btn:visited {
+/*---------------------- buttons -------------------------*/
+.btn {
+  /* style using psudo elements . sudo elements allow us to different parts of elements */ }
+  .btn:link, .btn:visited {
     text-transform: uppercase;
     text-decoration: none;
     font-weight: 700;
-    padding: 15px 40px;
+    padding: 1.5rem 4rem;
     display: inline-block;
-
     transition: all .2s;
-    -webkit-transition: all .2s;
-    -moz-transition: all .2s;
-    -ms-transition: all .2s;
-    -o-transition: all .2s;
-    
-    border-radius: 50px;
-    -webkit-border-radius: 50px;
-    -moz-border-radius: 50px;
-    -ms-border-radius: 50px;
-    -o-border-radius: 50px;
-
-    position: relative;
-}
-
-.btn:hover {
+    border-radius: 10rem;
+    position: relative; }
+  .btn:hover {
     transform: translateY(-3px);
-    -webkit-transform: translateY(-3px);
-    -moz-transform: translateY(-3px);
-    -ms-transform: translateY(-3px);
-    -o-transform: translateY(-3px);
-
-    box-shadow: 0 10px 20px rgb(0,0,0,.2);
-}
-
-.btn:active {
+    box-shadow: 0 .5rem 1rem #000; }
+    .btn:hover::after {
+      transform: scalex(1.4) scaleY(1.6);
+      opacity: 0; }
+  .btn:active {
     transform: translateY(-1px);
-    -webkit-transform: translateY(-1px);
-    -moz-transform: translateY(-1px);
-    -ms-transform: translateY(-1px);
-    -o-transform: translateY(-1px);
-
-    box-shadow: 0 5px 10px rgb(0,0,0,.2);
-
-}
-
-.btn--white {
+    box-shadow: 0 .25rem .5rem #000; }
+  .btn--white {
     background-color: #fff;
-    color: #777;
-}
-
-  /* style using psudo elements . sudo elements allow us to different parts of elements */
-
+    color: #777; }
+    .btn--white::after {
+      background-color: #fff; }
   .btn::after {
-      content:  "";
-      display: inline-block;
-      height: 100%;
-      width: 100%;
-      border-radius: 100px;
-      -webkit-border-radius: 100px;
-      -moz-border-radius: 100px;
-      -ms-border-radius: 100px;
-      -o-border-radius: 100px;
-      position: absolute;
-      top: 0;
-      left: 0;
-      z-index: -1;
-      transition: all .4s;
-      -webkit-transition: all .4s;
-      -moz-transition: all .4s;
-      -ms-transition: all .4s;
-      -o-transition: all .4s;
-}
-
-.btn--white::after {
-    background-color: #fff;
-}
-
-.btn:hover::after {
-    transform: scalex(1.4) scaleY(1.6);
-    -webkit-transform: scalex(1.4) scaleY(1.6);
-    -moz-transform: scalex(1.4) scaleY(1.6);
-    -ms-transform: scalex(1.4) scaleY(1.6);
-    -o-transform: scalex(1.4) scaleY(1.6);
-    opacity: 0;
-}
-
-.btn--animated {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 10rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all .4s; }
+  .btn--animated {
     animation: moveInButton .5s ease-out .7s;
-    -webkit-animation: moveInButton .5s ease-out 2s;
+    animation-fill-mode: backwards; }
 
-    animation-fill-mode: backwards;
-}
+/*---------------------------------- HEADER -------------------------------------*/
+.header {
+  height: 95vh;
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(119, 119, 119, 0.8)), url(../img/hero.jpg);
+  background-size: cover;
+  background-position: top;
+  /*-- refer link in importent notes ---*/
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  /* child logo box is set to absolute , so the header shuld be relative to set its position*/
+  position: relative; }
+  .header__logo-box {
+    position: absolute;
+    /*these top left props are calculated from the parent element header */
+    top: 4rem;
+    left: 4rem; }
+  .header__logo {
+    height: 3.5rem; }
+  .header__text-box {
+    position: absolute;
+    /* this selector element is set absolute and parent is set to relative 
+            so these valuse are in relatinon with the parent */
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* to make every text type element in the div to center ... here making the button of type anchor having text to center */
+    text-align: center; }

@@ -1,0 +1,60 @@
+/*---------------------- buttons -------------------------*/
+.btn {
+    &:link,
+    &:visited {
+      text-transform: uppercase;
+      text-decoration: none;
+      font-weight: 700;
+      padding: 1.5rem 4rem;
+      display: inline-block;
+      transition: all .2s;
+      border-radius: 10rem;
+      position: relative;
+    }
+    
+    &:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 .5rem 1rem #000; 
+
+       &::after {
+      transform: scalex(1.4) scaleY(1.6);
+      opacity: 0; }
+    
+    }
+    
+    &:active {
+      transform: translateY(-1px);
+      box-shadow: 0 .25rem .5rem #000; 
+    }
+    
+    &--white {
+      background-color: #fff;
+      color: #777; 
+
+    &::after {
+      background-color: #fff; }
+      
+    
+    }
+    
+    /* style using psudo elements . sudo elements allow us to different parts of elements */
+    &::after {
+      content: "";
+      display: inline-block;
+      height: 100%;
+      width: 100%;
+      border-radius: 10rem;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      transition: all .4s;
+    }
+
+    &--animated {
+      animation: moveInButton .5s ease-out .7s;
+      animation-fill-mode: backwards; 
+    }
+    
+
+  }
