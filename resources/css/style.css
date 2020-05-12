@@ -121,7 +121,7 @@ body {
     top: 0;
     left: 0;
     z-index: -1;
-    transition: all .4s; }
+    transition: all .3s; }
   .btn--animated {
     animation: moveInButton .5s ease-out 2s;
     animation-fill-mode: backwards; }
