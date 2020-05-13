@@ -1,7 +1,7 @@
 
   
   .heading-primary {
-    color: #fff;
+    color: $color-white;
     text-transform: uppercase;
     /* during transforms or animations the backpart shakes some times to ovecome that */
     backface-visibility: hidden;

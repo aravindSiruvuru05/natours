@@ -4,3 +4,21 @@
     margin-top: -20vh;
 }
 
+.section-features {
+    padding: 20rem 0;
+    background-image: linear-gradient(
+        to right bottom,
+     rgba($color-primary-light,.8),rgba($color-grey-dark,.8)), url(../img/nat-4.jpg);
+     background-size: cover;
+    background-position: top;
+    transform: skewY(-7deg);
+    margin-top: -10rem;
+
+    // .section-features > * section features direct child selects all the childs 
+    // of the selector we can also skew them back to normal at the fetures box  to make them horizontal
+    // but if one day some thing other than thes type of boxs comes we need to again skew them bakc at their class
+
+    & > * { 
+        transform: skewY(7deg);
+    }
+}
