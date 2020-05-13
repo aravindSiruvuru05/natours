@@ -10,11 +10,12 @@
       transition: all .2s;
       border-radius: 10rem;
       position: relative;
+      font-size: $default-font-size;
     }
     
     &:hover {
       transform: translateY(-3px);
-      box-shadow: 0 .5rem 1rem #000; 
+      box-shadow: 0 5px 10px rgba($color: $color-black, $alpha: 5); 
 
        &::after {
       transform: scalex(1.4) scaleY(1.6);
@@ -24,7 +25,7 @@
     
     &:active {
       transform: translateY(-1px);
-      box-shadow: 0 .25rem .5rem #000; 
+      box-shadow: 0 3px 5px rgba($color: $color-black, $alpha: 5); 
     }
     
     &--white {
@@ -56,4 +57,30 @@
       animation-fill-mode: backwards;
     }
 
+  }
+
+.btn-text {    
+    &:link,
+    &:visited {
+      color: $color-primary;
+      text-decoration: none;
+      text-transform: uppercase;
+      display: inline-block;
+      font-size: $default-font-size;
+      padding: 3px;
+      transition: all .2s; 
+      border-bottom: 1px solid $color-primary;
+    }
+
+    &:hover {
+      background-color: $color-primary;
+      color: $color-white;
+      box-shadow: 0 1rem 2rem rgba($color: $color-black, $alpha:.15);
+      transform: translateY(-3px); }
+
+     &:active {
+      box-shadow: 0 .5rem 1rem rgba($color: $color-black, $alpha:.15);
+      
+       transform: translateY(-1px);
+}
   }
