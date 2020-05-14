@@ -1,6 +1,8 @@
 @mixin clearfix {
     // what clearfix does is it adds a sudo element to the collapsed element and
-    // clears the floats  ... clear : both => clears both left and right floats
+    // gets the sudo element to height of float elements  ...so that the container is as it is and 
+    // flow of next element does not coinside into this container
+    // clear : both => gets if any one element on either side is present to clear i.e both left and right floats
 
     &::after {
         content: "";

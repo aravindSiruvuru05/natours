@@ -56,8 +56,15 @@
         height: 23rem;
         // edit the image
         background-blend-mode: screen; 
+
+        // because of clip path the overflow: hidden is not applied 
+        // so we have to include the border radius here itself to get back the border radius
+
         -webkit-clip-path: polygon(0 0,100% 0,100% 85%,0 100%);
         clip-path: polygon(0 0,100% 0,100% 85%,0 100%);
+        
+        border-top-left-radius: 3px;
+        border-top-right-radius: 3px;
         
 
         &--1 {
