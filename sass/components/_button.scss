@@ -30,10 +30,18 @@
     
     &--white {
       background-color: #fff;
-      color: #777; 
+      color: #777;  
 
     &::after {
       background-color: #fff; }
+    }
+
+    &--green {
+      background-color: $color-primary;
+      color: #fff;  
+
+    &::after {
+      background-color: $color-primary; }
       
     
     }
@@ -75,11 +83,11 @@
     &:hover {
       background-color: $color-primary;
       color: $color-white;
-      box-shadow: 0 1rem 2rem rgba($color: $color-black, $alpha:.15);
+      box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
       transform: translateY(-3px); }
 
      &:active {
-      box-shadow: 0 .5rem 1rem rgba($color: $color-black, $alpha:.15);
+      box-shadow: 0 .75rem 2rem rgba($color: $color-black, $alpha:.15);
       
        transform: translateY(-1px);
 }
