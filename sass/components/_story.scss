@@ -1,0 +1,82 @@
+.story {
+    width: 75%;
+    margin: 5rem auto;
+    box-shadow: 0 3rem 6rem rgba($color: $color-black, $alpha: .1);
+    border-radius: 3px; 
+    padding: 6rem;
+    padding-left: 9rem;
+    font-size: $default-font-size;
+    transform: skewX(-12deg);
+
+
+    // thisgonna not work becoz in css two transfoms are not going to work at a time on 
+    // an element , here after this transform &__shape has another transform 
+    // so we have to give it at their level
+    // & > * {
+    // transform: skewX(-12deg);
+    // }
+
+    &__shape {
+        width: 15rem;
+        height: 15rem;
+        float: left;
+
+        // in order to use shapeoutside prop the element shuld be floated 
+        // and given width height
+        // this shape out ouny defines where the comtent has to flow around
+        -webkit-shape-outside: circle(50% at 50% 50%);
+        shape-outside: circle(50% at 50% 50%);
+
+        // gives the shape of the element
+        -webkit-clip-path: circle(50% at 50% 50%); 
+        clip-path: circle(50% at 50% 50%);
+
+        transform: translateX(-3rem) skewX(12deg);
+        position: relative;
+    }
+ 
+    &__image {
+        height: 100%;
+        //in the aniation in image it zooms out so we keep initially bit zoomed in and
+        // when hover it is set back to normal using scale.
+        transform: translateX(-4rem) scale(1.4);
+        // some wired thing happens when you give animation other that wat you except
+        // that can be overcome by backface visibility     
+        backface-visibility: hidden;
+        transition: all .5s;
+    }
+
+    &__text {
+        
+        transform: skewX(12deg);
+    }
+
+    &__caption {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,20%);
+        color: $color-white;
+        text-transform: uppercase;
+        font-size: 1.7rem;
+        text-align: center;
+        opacity: 0;
+        transition: all .5s;
+        backface-visibility: hidden;
+    }
+
+    //if you mention only hover for the whole element the whole element gets transmition / transfom
+    // if we menction specific class inside the element ... the only class gets the transition 
+    //here caption only gets transition animation as it is menctioned
+
+    &:hover  &__caption { 
+        opacity: 1;
+        transform: translate(-50%,-50%);
+    }
+
+    
+    &:hover &__image {
+        transform: translateX(-4rem) scale(1);
+        filter: blur(3px) brightness(80%);
+    }
+}
