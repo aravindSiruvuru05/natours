@@ -1,5 +1,6 @@
 /*---------------------- buttons -------------------------*/
 .btn {
+    &, //button element does not have link andn visited so wee include & to include the button therse properties
     &:link,
     &:visited {
       text-transform: uppercase;
@@ -11,6 +12,10 @@
       border-radius: 10rem;
       position: relative;
       font-size: $default-font-size;
+      
+      // changes for <button> element
+      border: none;
+      cursor: pointer;
     }
     
     &:hover {
@@ -23,7 +28,8 @@
     
     }
     
-    &:active {
+    &:active, //focus is for button element of this ancor type to over come the bluee out line when activee
+    &:focus {
       transform: translateY(-1px);
       box-shadow: 0 3px 5px rgba($color: $color-black, $alpha: 5); 
     }

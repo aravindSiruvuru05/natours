@@ -1,7 +1,6 @@
 .form {
     &__group:not(:last-child) {
-
-        margin-bottom: 2rem; 
+            margin-bottom: 2rem; 
     }
 
     &__input {
@@ -15,18 +14,108 @@
         border-bottom: 3px solid transparent;
         width: 90%;
         display: block;
-
+        transition: all .3s;
+         
         &:focus { 
             outline: none;
             box-shadow: 0 1rem 2rem rgba($color-black, .1);
             border-bottom: 3px solid $color-primary;
         }
 
+        &:focus:invalid {
+            border-bottom: 3px solid $color-secondary-dark;
+        }
+
         &::-webkit-input-placeholder {
             color: $color-grey-dark-2;
-        }
-    }    
- 
-    &__label {
+        }  
     }
+
+     
+
+    &__label { 
+        font-size: 1.2rem;
+        font-weight: 700;
+        //to align whit the placeholder 
+        margin-left: 2rem;
+        margin-top: .7rem;
+        display: block;
+
+        // the opa
+        transition: all .3s;
+    }
+
+    //   &__input:placeholder-shown  helps to style the input when placeholder is shown
+    //  now comes the SIBILING SELECTOR  + =>right next sibiling ~ any later sibiling even some other elements in between those sibilings
+    //   input and label are the continous sibilings so we use + 
+
+    &__input:placeholder-shown + &__label {
+
+        // what shuld be done to the label when place holder is shown shul be here in the block
+        // visibility hidden is enough to hide the label at time of placeholder is shown
+        // but transition can not be done on visibility so we use opacity to make transition
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-4rem);
+
+    }
+
+
+    &__radio-group {
+        width: 49%; 
+
+        // if it is inline width padding margin nothing works
+        // so we use inline block
+        display: inline-block; 
+    }
+
+    &__radio-input {
+        
+        visibility: hidden;
+    }
+
+    &__radio-label {
+         cursor: pointer; 
+         font-size: $default-font-size;  
+         position: relative;
+         padding-left: 4rem;
+    }
+
+    &__radio-button {
+
+        height: 3rem;
+        width: 3rem;
+        border: 5px solid $color-primary;
+        border-radius: 50%;
+        display:inline-block;
+        position: absolute;
+        top: -.4rem;
+        left: 0;
+
+        &::after {
+            content: "";
+            height: 1.2rem;
+            width: 1.2rem;
+            top: 50%;
+            left: 50%;
+            display: block;
+            border-radius: 50%;
+            background-color: $color-primary;
+            position: absolute;
+            transform: translate(-50%,-50%);
+            opacity: 0;
+            transition: opacity .2s;
+        }
+    }
+
+    //to make this green radio button e=werok we use the sibiling selector 
+    //and we have a property on radio input as checked ... 
+    // if the value is true the the sibilings mentioned are added with the bolckof props
+
+    &__radio-input:checked ~ &__radio-label &__radio-button::after {
+
+        opacity: 1;
+    }
+
+
 } 
