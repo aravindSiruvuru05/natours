@@ -12,6 +12,11 @@
     /* child logo box is set to absolute , so the header shuld be relative to set its position*/
     position: relative; 
 
+    @include respond(phone) { 
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+        clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+      }
+
     &__logo-box {
         position: absolute;
         /*these top left props are calculated from the parent element header */

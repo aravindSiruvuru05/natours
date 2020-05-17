@@ -1,12 +1,13 @@
 
   
-  .heading-primary {
+.heading-primary {
     color: $color-white;
     text-transform: uppercase;
     /* during transforms or animations the backpart shakes some times to ovecome that */
     backface-visibility: hidden;
     margin-bottom: 6rem; 
 
+   
     &--main {
         display: block;
         font-size: 6rem;
@@ -14,7 +15,12 @@
         letter-spacing: 3.5rem;
         animation: moveInLeft 1s ease-out 2s;
         /*countfornooftimesitsuls=dhappen*//*animation-iteration-count: 1; */
-}
+
+        @include respond(phone) {
+          letter-spacing: 1rem;
+          font-size: 5rem;
+        }
+      }
       
     &--sub {
         display: block;
@@ -22,6 +28,11 @@
         font-weight: 400;
         letter-spacing: 1.6rem;
         animation: moveInRight 1s ease-out 2s;
+
+        @include respond(phone) {
+          letter-spacing: .5rem;
+          font-size: 1.5rem;
+        }
 }
 
 }
@@ -36,8 +47,6 @@ body {
     /* line height 1.7 meaans .. 1.7 times of pre defined height. */
     line-height: 1.7;
     color: $color-grey-dark;
-    /*-- not for inheritance ---*/
-    padding: 3rem;
     
   }
   
@@ -52,6 +61,17 @@ body {
   -webkit-background-clip: text;
   color: transparent;
   transition: all .2s;
+
+  @include respond(tab-port) {
+      font-size: 3rem;
+      
+    word-spacing: .7rem; 
+  }
+
+  @include respond(phone) {
+    font-size: 2.5rem;
+    word-spacing: .4rem; 
+}
 
   &:hover {
     transform: scaleX(1.1) skewY(2deg) skewX(15deg);

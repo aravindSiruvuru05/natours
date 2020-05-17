@@ -7,8 +7,8 @@
 
     &__button {
         background-color:$color-white;
-        height: 6rem;
-        width: 6rem;
+        height: 5rem;
+        width: 5rem;
         position: fixed;
         top: 6rem;
         right: 6rem;
@@ -17,18 +17,33 @@
         box-shadow: 0 1rem 3rem rgba($color: #000000, $alpha: .1);
         text-align: center;
         cursor: pointer;
+
+        @include respond(tab-port) { 
+            height: 5rem;
+            width: 5rem;
+            position: fixed;
+            top: 4.5rem;
+            right: 5rem;
+          }
     }
 
     &__background {
-        height: 5rem;
-        width: 5rem;
+        height: 4.5rem;
+        width: 4.5rem; 
         border-radius: 50%;
         position: fixed;
         top: 6.5rem; 
-        right: 6.5rem;
+        right: 6.2rem;
         background-image: radial-gradient($color-primary-light,$color-primary-dark);
         z-index: 1000;  
         transition: transform .8s ; 
+  
+        @include respond(tab-port) { 
+            height: 4rem;
+            width: 4rem;   
+            top:  5rem;
+            right: 5.5rem;
+          }
     }
   
     &__nav {
@@ -100,12 +115,17 @@
 
     &__icon {
         position: relative;
-        margin-top: 3rem; 
+        margin-top: 2.6rem; 
+
+        @include respond(tab-port) { 
+            margin-top: 2.5rem; 
+          }
+
         &,
         &::before,
         &::after { 
             width: 3rem; 
-            height: .25rem;   
+            height: .21rem;    
             background-color: $color-grey-dark-3;
             display: inline-block;
         } 

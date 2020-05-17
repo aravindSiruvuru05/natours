@@ -15,9 +15,27 @@
       if we want 70px element we give it as 7rem where its value is 70px i.e 7*10px(root font size)
       lest now make it into percentage where regular default fontsize of browser is 
       16px so , 16px as 100% then 10px is 62.5% */
-    font-size: 62.5%; /* 10px */
+    font-size: 62.5%; /* 10px */ //1rem=10px here
+
+    @include respond(tab-land) {
+      font-size: 56.25%; //9px
+    }
+ 
+    @include respond(tab-port) {
+      font-size: 50%; //1rem=8px
+    }
+    
+    @include respond(big-desktop) {
+      font-size: 75%; // 1rem
+    }
   }
   
   body {
-    box-sizing: border-box;  
+    box-sizing: border-box; 
+    /*-- not for inheritance ---*/
+    padding: 3rem;
+
+    @include respond(tab-port) {
+      padding: 0;
+    }
   }

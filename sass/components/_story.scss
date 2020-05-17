@@ -9,6 +9,14 @@
     font-size: $default-font-size;
     transform: skewX(-12deg);
 
+    @include respond(tab-port) {
+        width: 100%;
+        padding: 4rem;
+        padding-left: 7rem;
+    }
+    @include respond(phone) {
+        transform: translateX(0rem) skew(0);
+    }
 
     // thisgonna not work becoz in css two transfoms are not going to work at a time on 
     // an element , here after this transform &__shape has another transform 
@@ -34,6 +42,12 @@
 
         transform: translateX(-3rem) skewX(12deg);
         position: relative;
+
+        @include respond(phone) {
+            
+            transform: skewX(0deg);
+            margin: 2rem;
+            }
     }
  
     &__image {
@@ -45,11 +59,18 @@
         // that can be overcome by backface visibility     
         backface-visibility: hidden;
         transition: all .5s;
+
+      
     }
 
     &__text {
         
         transform: skewX(12deg);
+
+        @include respond(phone) {
+            
+        transform: skewX(0deg);
+        }
     }
 
     &__caption {
