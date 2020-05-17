@@ -901,7 +901,7 @@ body {
   margin-top: -20vh; }
   @media (max-width: 56.25em) {
     .section-about {
-      padding: 15rem 0; } }
+      padding: 18rem 0; } }
 
 .section-features {
   padding: 20rem 0;
@@ -912,7 +912,7 @@ body {
   margin-top: -10rem; }
   @media (max-width: 56.25em) {
     .section-features {
-      padding: 1rem 0 1rem 0; } }
+      padding: 11rem 0 1rem 0; } }
   .section-features > * {
     transform: skewY(7deg); }
 
