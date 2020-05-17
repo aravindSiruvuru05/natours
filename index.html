@@ -132,9 +132,26 @@
                     </div>
                     <div class="col-1-of-2">
                         <div class="composition">
-                            <img src="resources/img/nat-1-large.jpg" alt="p1" class="composition__photo composition__photo--p1">
+                            <!-- in the src set e provide actual width of image in px width an in size attribute we mention breakpoins for diff 
+                             resolutions to display sizes of image here at 900px it has to display image size of 20vw and so on so
+                            now browser calculates which img to display when , 300px is default wen no breakpoint hits ... for high resloutin disply it will display lagre px an vice versa
+                          600px/16 = 37.5 em   900px/16 = 65.25em-->
+                            <img srcset="resources/img/nat-1.jpg 300w, resources/img/nat-1-large.jpg 1000w"
+                                    sizes="(max-width: 65.25em) 20vw, (max-width: 37.5em) 30vw, 300px " 
+                                    src="resources/img/nat-1-large.jpg"
+                                    class="composition__photo composition__photo--p1" >
+                                    <img srcset="resources/img/nat-2.jpg 300w, resources/img/nat-2-large.jpg 1000w"
+                                    sizes="(max-width: 65.25em) 20vw, (max-width: 37.5em) 30vw, 300px " 
+                                    src="resources/img/nat-2-large.jpg"
+                                    class="composition__photo composition__photo--p2" >
+                                    <img srcset="resources/img/nat-3.jpg 300w, resources/img/nat-3-large.jpg 1000w"
+                                    sizes="(max-width: 65.25em) 20vw, (max-width: 37.5em) 30vw, 300px " 
+                                    src="resources/img/nat-3-large.jpg"
+                                    class="composition__photo composition__photo--p3" >
+
+                            <!-- <img src="resources/img/nat-1-large.jpg" alt="p1" class="composition__photo composition__photo--p1">
                             <img src="resources/img/nat-2-large.jpg" alt="p2" class="composition__photo composition__photo--p2">
-                            <img src="resources/img/nat-3-large.jpg" alt="p2" class="composition__photo composition__photo--p3">
+                            <img src="resources/img/nat-3-large.jpg" alt="p2" class="composition__photo composition__photo--p3"> -->
                         </div>
                     </div>
                 </div>
@@ -385,7 +402,14 @@
 
         <footer class="footer">
             <div class="footer__logo-box">
-                <img src="./resources/img/logo-green-2x.png" alt="" class="footer__logo">
+                <!-- picture is the attribute used to make images responsive with aresponsive to lthe display screen -->
+                <picture class="footer__logo">
+                    <source srcset="./resources/img/logo-green-small-1x.png 1x , ./resources/img/logo-green-small-2x.png 2x" 
+                                media="(max-width:37.5em)">
+                                <img srcset="./resources/img/logo-green-1x.png 1x , ./resources/img/logo-green-2x.png 2x" alt="" >
+                </picture>
+                <!-- /*only density switching is given as below*/
+                <img srcset="./resources/img/logo-green-1x.png 1x , ./resources/img/logo-green-2x.png 2x" alt="" class="footer__logo"> -->
             </div>
             <div class="row">
                 <div class="col-1-of-2">

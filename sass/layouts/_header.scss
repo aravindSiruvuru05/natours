@@ -1,16 +1,57 @@
 /*---------------------------------- HEADER -------------------------------------*/
 .header {
-    height: 95vh;
+    height: 85vh;  // changed for non clip path browsres if clip path work in browser then @support block will apply
     background-image: linear-gradient(
         to right bottom,
-     rgba($color-primary-light,.8),rgba($color-grey-dark,.8)), url(../img/hero.jpg);
+     rgba($color-primary-light,.8),rgba($color-grey-dark,.8)), 
+     url(../img/hero-small.jpg);
     background-size: cover;
     background-position: top;
+
+    /* child logo box is set to absolute , so the header shuld be relative to set its position*/
+    position: relative; 
+     
+// if clkippath suppported by browser thos block will apply
+    @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
     /*-- refer link in importent notes ---*/
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
     clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
-    /* child logo box is set to absolute , so the header shuld be relative to set its position*/
-    position: relative; 
+    height: 95vh;
+    }
+
+
+    // // resolution greater than the 1920dpi this block of code applied so, in abouve 
+    // // hero small is given and in this block hero is given so that it will flip acc to resolution of screen
+    // // here the resolution shukd be greater than 192dpi{mac} i.e 2dpi and width shuld be greater than mobile (for mobile such large resolution is not needed as 1200px is enough i.e herosmall) 
+    
+    // @media (min-resolution: 192dpi) and (min-width: 600px) {
+    //     background-image: linear-gradient(
+    //         to right bottom,
+    //      rgba($color-primary-light,.8),rgba($color-grey-dark,.8)), 
+    //      url(../img/hero.jpg);
+        
+    // }
+    // // if the screen width is greater than 200px and any dpi it shuld get hero img not small
+    // // if screen is greater than 600px and 1dpi then hero small. 
+
+    // @media (min-width: 2000px) {
+    //     background-image: linear-gradient(
+    //         to right bottom,
+    //      rgba($color-primary-light,.8),rgba($color-grey-dark,.8)), 
+    //      url(../img/hero.jpg);
+        
+    // }
+
+     // , act as or for above both conditions in same block   600/16 = 37.5em  2000px  =125em
+    @media (min-resolution: 192dpi) and (min-width: 37.5em), (min-width: 125em) ,
+    (-webkit-min-pixel-ratio: 2) and (min-width: 37.5em), (min-width: 125em)  // for safari 
+    {
+        background-image: linear-gradient(
+            to right bottom,
+         rgba($color-primary-light,.8),rgba($color-grey-dark,.8)), 
+         url(../img/hero.jpg);
+        
+    }
 
     @include respond(phone) { 
         -webkit-clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);

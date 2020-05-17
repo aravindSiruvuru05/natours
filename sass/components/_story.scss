@@ -30,18 +30,34 @@
         height: 15rem;
         float: left;
 
-        // in order to use shapeoutside prop the element shuld be floated 
+        // // in order to use shapeoutside prop the element shuld be floated 
+        // // and given width height
+        // // this shape out ouny defines where the comtent has to flow around
+        // -webkit-shape-outside: circle(50% at 50% 50%);
+        // shape-outside: circle(50% at 50% 50%);
+
+        // // gives the shape of the element
+        // -webkit-clip-path: circle(50% at 50% 50%);  
+        // clip-path: circle(50% at 50% 50%);
+
+        transform: translateX(-3rem) skewX(12deg); 
+        position: relative;
+        overflow: hidden;
+        border-radius: 50%;  //for firefox when below is not applied and need circle 
+
+        //if supported by browser this circle shape apply    firfox will not support then above code only APPLY else all the code apply in remaining browsers
+        @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
+             // gives the shape of the element
+        -webkit-clip-path: circle(50% at 50% 50%); 
+        clip-path: circle(50% at 50% 50%);
+         // in order to use shapeoutside prop the element shuld be floated 
         // and given width height
         // this shape out ouny defines where the comtent has to flow around
         -webkit-shape-outside: circle(50% at 50% 50%);
         shape-outside: circle(50% at 50% 50%);
-
-        // gives the shape of the element
-        -webkit-clip-path: circle(50% at 50% 50%); 
-        clip-path: circle(50% at 50% 50%);
-
-        transform: translateX(-3rem) skewX(12deg);
-        position: relative;
+        width: 15rem;
+        height: 15rem;
+     } 
 
         @include respond(phone) {
             
