@@ -39,3 +39,10 @@
       padding: 0;
     }
   }
+
+  //color of selection of text in webpage 
+
+  ::selection {
+    background-color: $color-primary;
+    color: $color-white;
+  }

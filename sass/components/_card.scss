@@ -164,10 +164,11 @@
         color: $color-white;
     }
 
-    @include respond(tab-port) {
-
+    // @include respond(tab-port) {    normally we use the mixin  and we add one more condition alng with it, if the deviice is touch device i.e no hover also use this block 
+        @media only screen and (max-width:  56.25em) ,
+        only screen and (hover: none) {
         height: auto;
-        background-color: #fff;
+        background-color: #fff; 
         border-radius: 3px;
         box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
     
